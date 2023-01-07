@@ -292,8 +292,11 @@ var x = setInterval(function() {
   detik.innerHTML = seconds;
     
   // Jika hitungan mundur selesai, tulis beberapa teks 
-  if (distance < 0) {
+  if (distance < 1) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    hari.innerHTML = 0;
+    jam.innerHTML = 0;
+    menit.innerHTML = 0;
+    detik.innerHTML = 0;
   }
 }, 1000);
