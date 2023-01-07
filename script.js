@@ -3,6 +3,7 @@ const container = document.querySelector('.container'),
 layer = document.querySelector('.layer'),
     // Kotak Awal
 kotakAwal = document.querySelector('.kotak-awal'),
+kotakWaktu = document.querySelector('.kotak-waktu'),
         // txt
 txtWedding = document.querySelector('.txt-wedding'),
 txtRyevoNadia = document.querySelector('.txt-ryevo-nadia'),
@@ -74,6 +75,7 @@ function gasAudio() {
 }
 
 function mKotakAwal() {
+    kotakWaktu.classList.toggle('flex');
     kotakAwal.classList.toggle('tr-skala-satu');
     kotakAwal.classList.toggle('rgba-bg-item-tr');
 
@@ -258,3 +260,40 @@ form.addEventListener('submit', e => {
             .catch(error => console.error('Error!', error.message));
     }
 });
+
+// waktu 
+// Mengatur waktu akhir perhitungan mundur
+var countDownDate = new Date("Jan 21, 2023 18:30:00").getTime();
+
+// Memperbarui hitungan mundur setiap 1 detik
+var x = setInterval(function() {
+
+  // Untuk mendapatkan tanggal dan waktu hari ini
+  var now = new Date().getTime();
+    
+  // Temukan jarak antara sekarang dan tanggal hitung mundur
+  var distance = countDownDate - now;
+    
+  // Perhitungan waktu untuk hari, jam, menit dan detik
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Keluarkan hasil dalam elemen
+  const hari = document.querySelector('#hari');
+  const jam = document.querySelector('#jam');
+  const menit = document.querySelector('#menit');
+  const detik = document.querySelector('#detik');
+
+  hari.innerHTML = days;
+  jam.innerHTML = hours;
+  menit.innerHTML = minutes;
+  detik.innerHTML = seconds;
+    
+  // Jika hitungan mundur selesai, tulis beberapa teks 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
