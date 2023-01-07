@@ -199,7 +199,7 @@ thumbs.onscroll = _ => {
     } 
 }
 panahKanan.onclick = _ => {
-    thumbs.scrollLeft = '100';
+    thumbs.scrollLeft = '200';
 }
 panahKiri.onclick = _ => {
     thumbs.scrollLeft = '0';
