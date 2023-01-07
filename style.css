@@ -258,7 +258,7 @@ video {
     position: absolute;
     right: 0;
     cursor: pointer;
-    background-color: #333;
+    background-color: rgb(109, 58, 0);
     padding: 5px 10px;
     border-radius: 0 10px 0 10px;
     color: #fff;
@@ -359,7 +359,7 @@ video {
     cursor: pointer;
     color: #fff;
     padding: 5px 10px;
-    background-color: #333;
+    background-color: rgb(109, 58, 0);
     font-family:'Times New Roman', Times, serif;
     transition: 1s;
     opacity: 0;
